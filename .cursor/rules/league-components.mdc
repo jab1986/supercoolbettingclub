@@ -1,0 +1,11 @@
+---
+description: Component reuse & testability.
+globs: src/components/**/*.{ts,tsx}
+---
+
+# League → Component Rule
+
+1. **Atomic** – One concern per component.  
+2. Expose props **only** for configurable parts; no hidden side-effects.  
+3. Storybook story + Vitest test for every exported component.  
+4. Prefer composition (`<Card><CardHeader/></Card>`) over prop explosion. 

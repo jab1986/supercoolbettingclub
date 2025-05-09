@@ -1,0 +1,11 @@
+---
+description: Minimal admin-only authentication.
+globs: src/**/*.{ts,tsx}
+---
+
+# League → Auth Rule
+
+1. Use **Supabase Auth** (email + password).  
+2. Store JWT in `httpOnly` cookie; 30 min expiry, sliding.  
+3. Protect `/src/app/admin/**` with a `middleware.ts` guard that redirects to `/login`.  
+4. Never expose user data client-side except `user.id`. 

@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# League → Next.js Rule
+
+1. **TypeScript everywhere** – Prefer `interface` > `type`, avoid `enum`.
+2. **App Router only** (`/src/app/`).  Use React Server Components by default; mark client components with `"use client"` sparingly.
+3. **Folder layout**  
+
+/src
+├─ app/ ← routes (RSC)
+├─ components/ ← UI
+├─ lib/ ← helpers (pure TS)
+└─ styles/ ← globals.css + tailwind.css
+
+4. **Data loading** – Use `cache()` and `revalidate` as needed; never fetch in components that just render static props.
+5. **SEO** – Export `generateMetadata()` for every route.
+6. **Images** – Always `next/image` with `placeholder="blur"`.

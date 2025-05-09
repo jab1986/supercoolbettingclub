@@ -1,0 +1,12 @@
+---
+description: Tailwind CSS guidelines for a clean, fast, mobile UI.
+globs: src/**/*.{ts,tsx,css}
+---
+
+# League → Tailwind Rule
+
+1. **v4 utility-first** – keep class lists ≤ 8 utilities; extract to `@apply` after that.  
+2. **Breakpoints** – mobile-first (`sm: md: lg:`).  Max width `prose` or `max-w-md` on phones.  
+3. **Design tokens** – extend the default palette once in `tailwind.config.ts`; do **not** inline hex colours.  
+4. **Dark mode** – use `class` strategy; honour `prefers-color-scheme`.  
+5. **Animation** – use `framer-motion` only for interactive states; no auto-playing spinners. 

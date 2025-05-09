@@ -1,0 +1,12 @@
+{
+  "rules": [
+    "league-nextjs",
+    "league-tailwind",
+    "league-postgres",
+    "league-auth",
+    "league-api",
+    "league-mobile",
+    "league-forms",
+    "league-components"
+  ]
+}

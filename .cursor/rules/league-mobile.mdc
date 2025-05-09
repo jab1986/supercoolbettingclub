@@ -1,0 +1,11 @@
+---
+description: Ensure flawless phone experience.
+globs: src/**/*.{ts,tsx}
+---
+
+# League → Mobile Rule
+
+1. **Hit areas ≥ 44 px**; use `leading-6` text for tap targets.  
+2. No horizontal scroll on `sm` screens – audit with `@media (min-width: 640px)`.  
+3. Tables: make columns collapse into stacked cards on `sm`.  
+4. Performance budget: <100 kB JS on first load; lazy-load admin modules. 

@@ -1,0 +1,12 @@
+---
+description: Postgres schema & query conventions (Supabase-ready).
+globs: src/lib/db.ts
+---
+
+# League → Postgres Rule
+
+1. **Singular tables** (`result`, `player`), snake_case columns.  
+2. **Primary keys** – UUID v4 (`uuid_generate_v4()`).  
+3. **Timestamps** – `created_at` & `updated_at` (trigger).  
+4. **Query builder** – Use `@supabase/postgrest-js`; never write SQL in components.  
+5. **Migrations** – one SQL file per PR; rolled by CI. 

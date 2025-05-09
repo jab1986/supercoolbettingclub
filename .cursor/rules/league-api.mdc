@@ -1,0 +1,12 @@
+---
+description: API route standards.
+globs: src/app/api/**/*
+---
+
+# League → API Rule
+
+1. **Filename matches action** (`update-result/route.ts`).  
+2. `POST` only for mutations; `GET` for reads.  
+3. Validate body with **Zod**; return `400` on failure.  
+4. Wrap handlers with `try/catch`; on error respond `{ error: "…" }` + `500`.  
+5. Rate-limit admin routes to 30 req/min via middleware. 

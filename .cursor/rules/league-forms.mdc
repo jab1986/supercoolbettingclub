@@ -1,0 +1,11 @@
+---
+description: Safe admin forms & validation.
+globs: src/components/AdminForm.tsx
+---
+
+# League → Form Rule
+
+1. Use **React-Hook-Form + Zod**.  
+2. Display inline errors below each field; focus first invalid field on submit.  
+3. Disable submit while `isSubmitting`.  
+4. Optimistic UI: reflect successful save immediately, then revalidate. 
