@@ -53,7 +53,7 @@ export default function LeagueTable({ standings, isLoading = false }: LeagueTabl
   if (standings.length === 0) {
     return (
       <div className="card text-center">
-        <h2 className="text-xl font-bold mb-4">League Table</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-900">League Table</h2>
         <p className="text-gray-500 dark:text-gray-400">No players found.</p>
       </div>
     );
@@ -62,16 +62,16 @@ export default function LeagueTable({ standings, isLoading = false }: LeagueTabl
   return (
     <div className="w-full overflow-hidden rounded-lg">
       <div className="card">
-        <h2 className="text-xl font-bold mb-4">League Table</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">League Table</h2>
         
         {/* Desktop table - hidden on small screens */}
         <div className="hidden sm:block">
-          <table className="w-full text-left">
+          <table className="w-full text-left text-gray-900 dark:text-white">
             <thead>
               <tr className="border-b border-gray-200 dark:border-gray-700">
-                <th className="py-3 font-semibold">
+                <th className="py-3 font-semibold text-gray-900 dark:text-white">
                   <button 
-                    className="flex items-center text-left leading-6 min-h-[44px]"
+                    className="flex items-center text-left leading-6 min-h-[44px] text-gray-900 dark:text-white"
                     onClick={() => handleSort('name')}
                   >
                     Player
@@ -80,9 +80,9 @@ export default function LeagueTable({ standings, isLoading = false }: LeagueTabl
                     )}
                   </button>
                 </th>
-                <th className="py-3 font-semibold">
+                <th className="py-3 font-semibold text-gray-900 dark:text-white">
                   <button 
-                    className="flex items-center text-left leading-6 min-h-[44px]"
+                    className="flex items-center text-left leading-6 min-h-[44px] text-gray-900 dark:text-white"
                     onClick={() => handleSort('points')}
                   >
                     Points
@@ -91,15 +91,15 @@ export default function LeagueTable({ standings, isLoading = false }: LeagueTabl
                     )}
                   </button>
                 </th>
-                <th className="py-3 font-semibold">Picks (Week {standings[0]?.nextWeek || 1})</th>
+                <th className="py-3 font-semibold text-gray-900 dark:text-white">Picks (Week {standings[0]?.nextWeek || 1})</th>
               </tr>
             </thead>
             <tbody>
               {sortedStandings.map((player) => (
                 <tr key={player.id} className="border-b border-gray-200 dark:border-gray-700">
-                  <td className="py-4 font-medium">{player.name}</td>
-                  <td className="py-4">{player.totalPoints}</td>
-                  <td className="py-4">{player.picksNextWeek}</td>
+                  <td className="py-4 font-medium text-gray-900 dark:text-white">{player.name}</td>
+                  <td className="py-4 text-gray-900 dark:text-white">{player.totalPoints}</td>
+                  <td className="py-4 text-gray-900 dark:text-white">{player.picksNextWeek}</td>
                 </tr>
               ))}
             </tbody>
@@ -110,7 +110,7 @@ export default function LeagueTable({ standings, isLoading = false }: LeagueTabl
         <div className="sm:hidden space-y-4">
           <div className="flex justify-between pb-2 border-b border-gray-200 dark:border-gray-700">
             <button 
-              className="font-semibold leading-6 min-h-[44px]"
+              className="font-semibold leading-6 min-h-[44px] text-gray-900 dark:text-white"
               onClick={() => handleSort('name')}
             >
               Player
@@ -119,7 +119,7 @@ export default function LeagueTable({ standings, isLoading = false }: LeagueTabl
               )}
             </button>
             <button 
-              className="font-semibold leading-6 min-h-[44px]"
+              className="font-semibold leading-6 min-h-[44px] text-gray-900 dark:text-white"
               onClick={() => handleSort('points')}
             >
               Points
@@ -135,10 +135,10 @@ export default function LeagueTable({ standings, isLoading = false }: LeagueTabl
               className="flex flex-col p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
             >
               <div className="flex justify-between items-center mb-2">
-                <h3 className="font-medium">{player.name}</h3>
-                <div className="text-lg font-bold">{player.totalPoints} pts</div>
+                <h3 className="font-medium text-gray-900 dark:text-white">{player.name}</h3>
+                <div className="text-lg font-bold text-gray-900 dark:text-white">{player.totalPoints} pts</div>
               </div>
-              <div className="text-sm text-gray-500 dark:text-gray-400">
+              <div className="text-sm text-gray-700 dark:text-gray-300">
                 Picks for Week {player.nextWeek}: <span className="font-medium">{player.picksNextWeek}</span>
               </div>
             </div>
